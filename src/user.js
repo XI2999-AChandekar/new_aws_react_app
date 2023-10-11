@@ -58,11 +58,11 @@ function User() {
         return <div key={index}>
             {index === 0 && <>
                 <div className="user-header">
-                    <div className="item-min-width">Name</div><div className="item-min-width">Mobile</div>
+                    <div className="item-min-width">Name</div>
                 </div>
             </>}
             <div className="user-items">
-                <div className="item-min-width">{user.name}</div><div className="item-min-width">{user.mobile}</div>
+                <div className="item-min-width">{user.name}</div>
             </div>
         </div>
     }
@@ -79,10 +79,8 @@ function User() {
                         {userState.length == 0 && <div>No data</div>}
                 </div>
                 <div className="section-user-form">
-
+                <input type="text" value={formState?.id || ""} name="id" onChange={handleChange} />
                         <input type="text" value={formState?.name || ""} name="name" onChange={handleChange} />
-                        <input type="text" value={formState?.mobile || ""} name="mobile" onChange={handleChange} />
-                        <input type="text" value={formState?.location || ""} name="location" onChange={handleChange} />
                         <button onClick={handleSubmit}>Save</button>
                 </div>
             </div>
