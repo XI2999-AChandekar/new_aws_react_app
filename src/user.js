@@ -44,7 +44,7 @@ function User() {
                 alert("added record ");
                 const data = await response.json();
                 console.log(data);
-                fetchUser();
+              await fetchUser();
                 setFormState(null)
             }
 
