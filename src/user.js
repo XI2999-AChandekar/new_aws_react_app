@@ -39,10 +39,15 @@ function User() {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formState)
             };
-            const response = await fetch(API,requestOptions);
-            const data = await response.json();
-            setUserState((preState)=>[...preState, data.user]);
-            setFormState(null)
+            const response = await fetch(API, requestOptions);
+            if (response !== null) {
+                alert("added record ");
+                const data = await response.json();
+                console.log(data);
+                fetchUser();
+                setFormState(null)
+            }
+
         } catch (err) {
             console.log(err)
         }
